@@ -1,9 +1,16 @@
+"use client";
+
 import Bg from "@/components/ui/background";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import React from "react";
 import Link from "next/link";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { useWallet, useConnection } from "@solana/wallet-adapter-react";
 
 const page = () => {
+  const { publicKey } = useWallet();
+  const { connection } = useConnection();
+
   return (
     <div className="relative w-full h-screen flex items-center justify-center flex-col px-4">
       <Bg />
@@ -13,6 +20,12 @@ const page = () => {
       <p className="max-w-xl mx-auto text-sm md:text-lg z-20 text-neutral-400 text-center">
         Put $1 in your IQ.
       </p>
+      <WalletMultiButton className="mb-4" />
+      {publicKey ? (
+        <p>Connected: {publicKey.toBase58()}</p>
+      ) : (
+        <p>Not connected</p>
+      )}
       <Link href={"/"}></Link>
       <HoverBorderGradient
         containerClassName="rounded-full border-zinc-950 cursor-pointer mt-9"
