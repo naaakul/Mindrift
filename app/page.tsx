@@ -20,19 +20,18 @@ const page = () => {
       <p className="max-w-xl mx-auto text-sm md:text-lg z-20 text-neutral-400 text-center">
         Put $1 in your IQ.
       </p>
-      <WalletMultiButton className="mb-4" />
-      {publicKey ? (
-        <p>Connected: {publicKey.toBase58()}</p>
-      ) : (
-        <p>Not connected</p>
-      )}
-      <Link href={"/"}></Link>
       <HoverBorderGradient
         containerClassName="rounded-full border-zinc-950 cursor-pointer mt-9"
         as="button"
         className="dark:bg-black dark:text-white flex items-center space-x-2"
       >
-        <span>Connect your wallet</span>
+      <WalletMultiButton className="mb-4 !rounded-full" />
+      {/* {publicKey ? (
+        <p>Connected: {publicKey.toBase58()}</p>
+      ) : (
+        <p>Not connected</p>
+      )} */}
+        {/* <span>Connect your wallet</span> */}
       </HoverBorderGradient>
     </div>
   );
