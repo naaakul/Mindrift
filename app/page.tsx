@@ -3,13 +3,12 @@
 import Bg from "@/components/ui/background";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import React from "react";
-import Link from "next/link";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { useWallet, useConnection } from "@solana/wallet-adapter-react";
+// import { useWallet, useConnection } from "@solana/wallet-adapter-react";
 
 const page = () => {
-  const { publicKey } = useWallet();
-  const { connection } = useConnection();
+  // const { publicKey } = useWallet();
+  // const { connection } = useConnection();
 
   return (
     <div className="relative w-full h-screen flex items-center justify-center flex-col px-4">
