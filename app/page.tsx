@@ -20,7 +20,7 @@ const page = () => {
         Put $1 in your IQ.
       </p>
       <HoverBorderGradient
-        containerClassName="rounded-full border-zinc-950 cursor-pointer mt-9"
+        containerClassName="rounded-lg border-zinc-950 cursor-pointer mt-9"
         as="button"
         className="dark:bg-black dark:text-white flex items-center space-x-2"
       >
