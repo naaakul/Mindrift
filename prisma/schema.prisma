@@ -1,0 +1,37 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "postgresql" // or "mysql" or "sqlite" depending on your DB
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String?
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model Room {
+  id          Int      @id @default(autoincrement())
+  joinKey     String   @unique
+  topic       String
+  hostWallet  String
+  status      String   
+  startedAt   DateTime?
+  players     Player[]
+}
+
+model Player {
+  id            Int      @id @default(autoincrement())
+  name          String
+  walletAddress String
+  score         Int?     @default(0)
+  submitted     Boolean  @default(false)
+  roomId        Int
+  room          Room     @relation(fields: [roomId], references: [id])
+}
