@@ -1,10 +1,11 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Trophy, Home, Plus } from "lucide-react"
+import { Trophy, Home} from "lucide-react"
 import Bg from "@/components/ui/background"
 
-export default function ResultsPage({ params }: { params: { roomId: string } }) {
+// export default function ResultsPage({ params }: { params: { roomId: string } }) {
+export default function ResultsPage() {
   const players = [
     { id: 1, name: "You (Host)", rank: 1, score: 8, prize: 1.2 },
     { id: 2, name: "CryptoWhale", rank: 2, score: 7, prize: 0.8 },
